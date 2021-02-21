@@ -1,10 +1,12 @@
-from config import DATABASE_URL
+import os
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 # Количество отображаемых визитов
 MAX_VISITS = 5
+#from config import DATABASE_URL
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 app = Flask(__name__)
 # Настраиваем приложение
